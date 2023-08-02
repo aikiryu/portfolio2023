@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header{
+            background-color: #000;
+            height: 50px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        h1 img{
+            height: 40px;
+        }
+
+        .navBtn{
+            background-color: #000;
+            border: 0;
+            border-right: 1px solid #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+        }
+        .navBtn span{
+            margin-left: auto;
+             margin-right: auto;
+            display: block;
+            width: 22px;
+            height: 3px;
+            margin-bottom: 4px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .navBtn span:last-child{
+            margin-bottom: 0;
+        }
+
+        .myBtn{
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            border-left: 1px solid #fff;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .myBtn img{
+            width: 25px;
+            /* 
+            모바일 환경에서 보일 이미지는 보통 2배 이상 사이즈로
+            작업을 합니다. 
+            모바일기기와 일부 노트북들은 해상도가 높습니다
+            즉 기기 자체의 스펙이 가로너비 390이라고 하더라도,
+            이 하나의 포인트안에 2*2 총 4개의 화소가 들어가있는
+            경우가 많으므로,
+            실질적으로 깨짐없이 이미지를 꽉 차게 해서 보려면
+            이미지를 780px 이상으로 만들어야 합니다 
+            */
+        }
+
+
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            color:#fff;
+            display: none;
+        }
+
+        .closeBtn{
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: 0;
+            text-align: center;
+            color: #fff;
+            font-size: 40px;
+        }
+        .util{
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .util li:after{
+            content: '|';
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+
+        .util li:last-child:after{
+            content: none;
+        }
+
+        .gnb{
+            font-size: 36px;
+            margin-left: 15px;
+        }
+
+        .gnb li{
+            margin-bottom: 10px;
+        }
+
+        .banner .mo{
+            width: 100%;
+            /* 
+            img는 특성상
+            너비와 높이 둘 중 하나의 값만 주면
+            나머지 하나는 자동으로 리사이징 된다.
+            그래서 모바일처럼 변동사항이 많은 환경에서는
+            이미지의 너비나 높이중 하나의 값만 줘놓고,
+            나머지들은 가변하는 상황에 따라 적용되게 설정해두는
+            경우가 많습니다.  
+            */
+        }
+
+        .banner .tablet{
+            display: none;
+        }
+
+
+        @media all and (min-width:768px){
+
+            .banner .mo{
+                display: none;
+            }
+
+            .banner .tablet{
+                display: block;
+                width: 100%;
+            }
+
+        }/*tablet*/
+
+/*
+레이아웃이 변동될 부분을 "브레이크 포인트" 라고 부릅니다.
+브레이크 포인트는 원하는 만큼, 혹은 디자인에서 필요로 하는 만큼
+얼마든지 만들 수 있습니다. 
+그러나, 일반적으로 모바일 / 태블릿 / PC 로 나누는데,
+태블릿은 768px부터 (아이패드 미니사이즈),
+PC는 1024px부터(구형 소형모니터) 적용시키는 것이 일반적입니다.
+다만, PC모니터의 경우 큰 사이즈의 모니터들이 많이 보급이
+되었으므로 요새는 1024보다는 1200px ~ 1440px 사이에서 많이
+지정합니다. 
+
+여러개의 브레이크포인트를 설정할 때는 
+작은것부터 큰것으로 진행하는 것이 바람직합니다. 
+
+그리고 태블릿사이즈에서는 일반적으로 모바일의 헤더를 그대로 
+가져가고, 피씨의 내부 그리드를 따라가는 경향이 있습니다. 
+
+*/
+       
+
+        @media all and (min-width:1440px){
+
+            header{
+                height: 140px;
+            }
+
+            .hWrap{
+                width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+            }
+
+            header button{
+                display: none;
+            }
+
+            h1{
+                padding-top: 15px;
+            }
+            h1 img{
+                height: 70px;
+            }
+
+            nav{
+                display: block;
+                background-color: transparent;
+                position: unset;
+            }
+
+            .util{
+                position: absolute;
+                top: 10px;
+                right: 0;
+            }
+
+            .gnb{
+                display: flex;
+                font-size: 18px;
+                margin-left: 0;
+                justify-content: center;
+            }
+
+            .gnb li{
+                margin-bottom: 0;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+
+            .banner{
+                height: 800px;
+                background-image: url(../images/bn_pc.png);
+                background-size: cover;
+                background-position: center center;
+            }
+
+            .banner a{
+                display: block;
+                height: 100%;
+            }
+
+
+            .banner .tablet{
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="hWrap">
+            <h1><a href="#">
+                <img src="../images/logo1.png">
+            </a></h1>
+
+            <button class="navBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button><!--navBtn-->
+
+            <button class="myBtn">
+                <img src="../images/my.png" alt="">
+            </button><!--my-->
+
+            <nav>
+                <button class="closeBtn">X</button>
+
+                <ul class="util">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul><!--util-->
+
+                <ul class="gnb">
+                    <li><a href="#">list1</a></li>
+                    <li><a href="#">list2</a></li>
+                    <li><a href="#">list3</a></li>
+                    <li><a href="#">list4</a></li>
+                    <li><a href="#">list5</a></li>
+                </ul><!--gnb-->
+            </nav>
+        </div><!--hWrap-->
+    </header>
+
+    <div class="banner">
+        <a href="#">
+            <img src="../images/bn_mo.png" class="mo">
+            <img src="../images/bn_pc.png" class="tablet">
+        </a>
+    </div><!--banner-->
+
+    <div class="banner2"></div>
+
+</body>
+</html>

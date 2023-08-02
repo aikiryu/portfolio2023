@@ -1,0 +1,664 @@
+header{
+    border-top: 2px solid #50b5ff;
+}
+
+.hWrap{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    background-color: pink;
+    align-items: center;
+}
+
+.gnb{
+    display: flex;
+}
+
+.gnb li{
+    margin-right: 50px;
+}
+
+.gnb li:last-child{
+    margin-right: 0;
+}
+
+.util{
+    display: flex;
+}
+
+.util li{
+    width: 64px;
+    height: 28px;
+    background-color: #f49600;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    /* height와 line-height를 똑같이 주면 텍스트를
+    공간안에서 세로축 가운데 정렬 할 수 있다 */
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-left: 0;
+/* 
+    css상에서 색상을 주는 방법
+    1. red, blue, black 처럼 이미 존재하는 색상의 이름을
+    적기 
+    
+    2. HEX code(r,g,b값을 16진법으로 표기한 것) 사용
+      #000000, #ff5012, #b35b12
+    
+    3. rgb코드 사용
+    rgb(255,255,255) / rgb(122,242, 123);
+    
+    - rgba(red,green,blue,불투명도)
+    rgba(0,0,0,0.5) = 50%불투명한 검정 
+    rgba(255,255,255,0.3) = 30%불투명한 흰색 
+    
+
+*/
+
+}
+
+.util .join{
+    background-color: #50b5ff;
+    margin-left: 12px;
+}
+
+.srch{
+    position: relative;
+}
+.srch input{
+    width: 143px;
+    height: 26px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+.srch .btnSrch{
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+}
+
+.mainVisual{
+    height: 454px;
+    background-image: url(../images/key_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+}
+
+.mainVisual h2{
+    font-size: 40px;
+    padding-top: 80px;
+    text-align: center;
+}
+
+.mainVisual .subTit{
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.srch2{
+    width: 560px;
+    /* padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px; */
+    padding: 20px;
+    /* 
+    padding과 margin은 줄여서 쓸 수 있다!
+    값을 하나만 적으면
+    상/하/좌/우에 그 값이 다 적용된다.
+    */
+    height: 100px;
+    background-color: rgba(0,0,0,0.8);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.srch2 form{
+    position: relative;
+}
+
+.srch2 form input{
+    width: 560px;
+    box-sizing: border-box;
+/* 
+ 기본적으로 border와 padding은 공간값에 추가가 된다.
+ -> 200px*200px짜리 박스에 상하좌우로 padding을 20씩 줄 경우
+ 해당 박스의 최종 너비와 높이는 240px*240px
+
+ -> 200px*200px 박스에 상하좌우로 border를 10씩 줄 경우,
+ 해당 박스의 최종 너비와 높이는 220px*220px
+
+ 그런데, box-sizing:border-box를 적용시킬 경우,
+ 요소의 기존 너비와 높이 안쪽으로 패딩과 보더가 생성된다.
+
+ -> 200px*200px박스에 상하좌우로 패딩 20px넣고,
+ box-sizin:border-box를 적용시킬 경우
+ 최종 너비와 높이는 그대로 200px*200px
+*/
+    border: 0;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 60px;
+}
+
+.srch2 form button{
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+.mainVisual .keyword{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.mainVisual .keyword .city a:hover{
+    text-decoration: underline;
+}
+
+.s1{
+    margin-top: 80px;
+}
+
+.sctTit{
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.s1 .con{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.s1 .con .item{
+    width: 348px;
+}
+
+.s1 .con .item img{
+    transition: all 1.5s;
+    /* transition 애니메이션 효과!!
+    css상에 변화가 일어날 때, 그 변화를 지연시켜서
+    애니메이션처럼 보여줌 
+    transition:property duration 
+              무엇을     얼마나 */
+}
+
+/* 
+ .item에게 마우스를 올렸을 때 그 안에 들어있는 img를 변화
+ 시키는 선택자
+*/
+
+.s1 .con .item:hover img{
+    box-shadow: 4px 5px 10px rgba(0,0,0,0.2);
+    /* 
+    box-shadow: 가로이동값 세로이동값 크기(번짐) 색상
+                좌->우     상->하
+    */
+}
+
+.s1 .con .item h4{
+    color: #0087ea;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 22px;
+}
+
+.s1 .con .item p{
+    font-size: 14px;
+    color: #666;
+}
+
+
+.s1 .more{
+    text-align: center;
+    color: #f49600;
+    font-size: 14px;
+    margin-top: 25px;
+    text-decoration: underline;
+}
+
+.s2{
+    background-color: #f0f0f0;
+    margin-top: 70px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.sctTxt{
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.s2 .con{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    /* 원래 flex를 쓰면 한 행에 모든 아이템을 일렬로
+    정리하려는 속성을 가집니다.
+    이것을 해제하기 위해서는 */
+    flex-wrap: wrap;
+    /* 을 사용합니다. 그러면 부모사이즈를 넘어서는
+    아이템들은 자연스럽게 아래로 흘러내리게 됩니다 */
+    justify-content: space-between;
+}
+.s2 .con .item{
+    width: 346px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 22px;
+}
+
+.s2 .item .pic{
+    position: relative;
+    overflow: hidden;
+    /* 
+    기본적으로
+    부모보다 큰 자식은 부모 밖으로 흘러넘치게 되어있습니다.
+    이때 흘러넘치는 부분을 숨기고싶다면 (클리핑마스크처럼)
+    부모에게 overflow:hidden을 주면 됩니다! 
+    
+    */
+    height: 200px;
+}
+.s2 .item .pic img{
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s;
+}
+
+.s2 .item:hover .pic img{
+    transform: scale(1.2);
+}
+
+.s2 .item .pic .txt{
+    background-image: linear-gradient(transparent,#000);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+}
+.s2 .item .pic .txt h4{
+    color: #50b5ff;
+}
+.s2 .item .pic .txt .date{}
+.s2 .item .pic .txt .date span{
+    color: #ccc;
+}
+
+.s2 .item .info{
+    padding: 15px;
+    position: relative;
+}
+.s2 .item .content{
+    color: #666;
+    font-size: 14px;
+}
+.s2 .item .content li{
+    margin-bottom: 5px;
+}
+
+.s2 .item .content .user{
+    background-image: url(../images/icon_user.png);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.s2 .item .count{
+    display: flex;
+    color: #666;
+    font-size: 14px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.s2 .item .count li{
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    padding-left: 15px;
+}
+
+.s2 .item .count .spot{
+    background-image: url(../images/icon_spot.png);
+    background-size: contain;
+}
+.s2 .item .count .view{
+    background-image: url(../images/icon_view.png);
+    padding-left: 20px;
+    background-position: 0 center;
+}
+.s2 .item .count .clip{
+    background-image: url(../images/icon_copy.png);
+}
+
+.s2 .more, .s3 .more{
+    width: 346px;
+    color: #666;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+.s3{
+    margin-top: 70px;
+    padding-bottom: 70px;
+}
+
+.s3 .con{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.s3 .item{
+    width: 261px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;    
+    height: 310px;
+    margin-bottom: 16px;
+}
+/* 두개이상의 요소에게 한꺼번에 같은 속성을 줄 때는
+,로 구분해서 쓸 수가 있다
+이때 주의해야 할 점은
+.s3 안에 들어있는 .item 첫번째와 마지막것을 선택하고 싶다면
+반드시
+
+.s3 .item:last-child, .s3 .item:first-child{}
+라고 써줘야 한다
+
+.s3 .item:last-child, .item:first-child{}
+이렇게 쓰면 .s3에 있는 item의 마지막것과
+모든 아이템들중 첫번째에 해당하는 모든게 다 선택된다
+
+*/
+.s3 .item:last-child, .s3 .item:first-child{
+    width: 538px;
+}
+
+.s3 .pic{
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+.s3 .pic img{
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+.s3 .item:hover img{
+    transform: scale(1.2);
+}
+
+.s3 .item .spot{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background-image: url(../images/spot_cnt.png);
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+
+.s3 .item .info{
+    /* padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+     */
+    padding:25px 20px;
+    /* padding:상하 좌우 */
+    text-align: center;
+}
+
+.s3 .item .info h4{
+    margin-bottom: 10px;
+}
+
+
+
+.s4{
+    background-color: #f0f0f0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.s4 .con{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.s4 .con img{
+    vertical-align: top;
+}
+
+/* 위아래간격들은 17px 씩  */
+
+.s4 .row1, .s4 .row2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.s4 .item{
+    margin-bottom: 17px;
+    position: relative;
+}
+
+.s4 .item span{
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    /* 글자아래 그림자 주는 것
+    text-shadow:가로이동값 세로이동값 크기 색상
+                (왼>오른) (위>아래) (번짐)
+    */
+    font-size: 18px;
+    position: absolute;
+    margin-top: -10px;
+    /* 원래 일반적으로 레이아웃짜는 용도로는 margin을
+    -값을 주는 것을 절대 권장하지 않습니다!
+    그러나 position:absolute등이 적용되어 다른 요소들의 배치에
+    문제를 야기 하지 않는 독립된 요소들은 -값을 줘도
+    무방합니다.*/
+
+    top: 50%;
+    /* 
+    position:absolute에서 값을 50%를 주면
+    해당 요소의 절반되는 지점에서부터 시작한다
+    */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+.s5{
+    background-image: url(../images/mobile_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 70px;
+    padding-top: 70px;
+}
+
+.s5 .con{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.s5 h3{
+    font-size: 26px;
+    color: #0087ea;
+    margin-bottom: 14px;
+}
+
+.s5 p{
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 14px;
+}
+
+.s5 .right{
+    margin-left: 30px;
+}
+
+.s5 .left img{
+    vertical-align: top;
+    /* 
+    img는 그냥 넣으면
+    vertical-align:baseline 속성때문에
+    하단에서 이미지가 5~8px정도 뜬다!
+    그래서 이것을 방지하기 위해서는
+    img에게 vertical-align:top이나
+    display:block을 준다 
+    */
+}
+
+footer{
+    background-color: #363c48;
+}
+footer .fWrap{
+    padding-bottom: 40px;
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .item{
+    width: 260px;
+    font-size: 14px;
+    padding-top: 24px;
+}
+
+footer .item h4{
+    padding-bottom: 4px;
+    border-bottom: #424753 1px solid;
+    color: #ccc;    
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* 
+:not() 
+()안의 것을 제외한 것들
+
+div:not(.item){ .item을 제외한 나머지 div 모두}
+*/
+
+footer ul:not(.sns) li{
+    margin-top: 5px;
+}
+
+footer .select{
+    display: flex;
+    margin-top: 20px;
+}
+footer .select .lang{
+    margin-right: 10px;
+}
+
+footer .select div{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    width: 113px;
+    border: 1px solid #424753;
+    color: #ccc;
+    font-size: 16px;
+    background-image: url(../images/arr_sel.png);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+
+    /* 
+    background-position 주는 방법 중, 테두리에서부터
+    원하는 만큼 띄워서 배치되도록 주는 방법이 있습니다
+    (position:absolute와 비슷한 원리로 작동)
+
+    오른쪽벽에서 10px, 위에서 20px 띄워진 자리에 위치시키고
+    싶다면,
+    background-position:right 10px top 20px;
+    
+    왼쪽벽에서 20px, 아래에서 40px띄워진 자리에 위치시키고
+    싶다면,
+    background-position:20px bottom 40px;
+
+    그런데 이렇게 쓰는 것은 center는 안됩니다
+    center 20px, 이렇게 쓰는 것은 작동 X
+
+    
+    */
+}
+
+
+.sns{
+    display: flex;
+    margin-top: 15px;
+}
+.sns li{
+    margin-right: 10px;
+}
+
+
+
+.copyright{
+    border-top: 1px solid #424753;
+    background-color: rgba(0,0,0,0.2);
+}
+.copyWrap{
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

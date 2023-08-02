@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+        }
+
+        a{
+            color: inherit;
+        }
+
+        .con{
+            /* 폰트, 텍스트 관련된 속성들은
+            부모에게 주면 자식들이 자연스럽게
+            물려받는다: 상속(inherit) */
+            font-weight: bold;
+            color: blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="con">
+        div, .con
+        <div class="item">
+            div, .item
+            <p class="txt">
+                p,.txt
+            </p>
+
+            <article class="acl">
+                article, .acl
+                <p class="test">
+                    p, .test
+                </p>
+
+                <a href="#" class="aTag">
+                    a, aTag
+                </a>
+            </article>
+        </div>
+    </div>
+    
+</body>
+</html>

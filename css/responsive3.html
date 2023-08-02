@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul{list-style: none;}
+        
+        header{
+            height: 50px;
+            background-color: #111;
+            color: #fff;
+        }
+
+        header ul{
+            display: none;
+        }
+
+        header h1{
+            text-align: center;
+        }
+
+        .banner{
+            height: 320px;
+            background-color: deeppink;
+        }
+
+        .con1{
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-top: 15px;
+        }
+        .con1 .item{
+            height: 150px;
+            background-color: red;
+            margin-bottom: 5px;
+        }
+
+        .con2{
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .con2 .item{
+            margin-bottom: 4px;
+            width:calc(50% - 2px);
+/* 
+브라우저에게 직접 값을 계산해서 css 적용시키는 함수
+보통 calc(50px - 4px) 이런 단순 px계산도 가능하지만
+이럴 때 보다는
+상대값에서 절대값을연산하는 용도로 많이 쓰인다!!!!
+
+calc(50% - 2px) 처럼 상대값과 절대값을 연산해야하는 상황에서
+씁니다!!! (이유 : 우리는 상대값이 정확하게 얼마인지
+알지 못하기 때문...!)
+
+쓸 때 주의 사항 : 
+반드시 피연산자와 연산자 사이를 띄어써야 합니다. 
+50% - 2px
+40px + 10%
+30% / 5
+100% * 3 
+띄어쓰지 않을시, - 2px 을 -2px 이렇게 쓸 시,
+음수로 인식합니다.
+
+연산자를 여러개 쓸 수도 있고, 
+괄호를 이용해 우선순위를 지정할 수도 있습니다
+
+calc(300px / (40% + 10px))
+
+
+*/
+
+            height: 170px;
+            background-color: seagreen;
+        }
+
+        footer{
+            background-color: #000;
+            color: #fff;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 20px;
+        }
+
+        @media all and (min-width:1200px){
+            header{
+                height: 100px;
+            }
+
+            .hWrap{
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: navy;
+                height: 100px;
+                position: relative;
+            }
+
+            header h1{
+                text-align: left;
+                font-size: 40px;
+                padding-top: 20px;
+            }
+
+            header ul{
+                display: flex;
+                position: absolute;
+                top: 30px;
+                right: 0;
+            }
+
+            header ul li{
+                margin-left: 20px;
+            }
+
+            .banner{
+                height: 500px;
+            }
+
+            .con1{
+                display: flex;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                justify-content: space-between;
+            }
+
+            .con1 .item{
+                width: 320px;
+                height: 320px;
+            }
+
+            .con2{
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+            }
+
+            .con2 .item{
+                width: 235px;
+            }
+
+            footer{
+                padding-bottom: 25px;
+                margin-top: 40px;
+            }
+
+            footer ul{
+                display: flex;
+                justify-content: center;
+            }
+
+            footer li:after{
+                content: '|';
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            footer li:last-child:after{
+                content: none;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hWrap">
+            <h1>LOGO</h1>
+            <ul>
+                <li>list1</li>
+                <li>list2</li>
+                <li>list3</li>
+                <li>list4</li>
+                <li>list5</li>
+            </ul>
+        </div><!--hWrap-->
+    </header>
+
+
+    <div class="banner"></div>
+
+    <div class="con1">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div><!--con1-->
+
+    <div class="con2">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div><!--con2-->
+
+
+    <footer>
+        <ul>
+            <li>fmenu1</li>
+            <li>fmenu2</li>
+            <li>fmenu3</li>
+            <li>fmenu4</li>
+            <li>fmenu5</li>
+        </ul>
+    </footer>
+
+
+</body>
+</html>

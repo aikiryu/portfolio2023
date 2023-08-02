@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{list-style: none;}
+
+        header{
+            height: 50px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .gnb{
+            display: none;
+        }
+
+        .banner{
+            height: 250px;            
+            background-color:crimson;
+        }
+        .con1{
+            margin-top: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .con1 .item{
+                border-radius: 10px;
+                background-color: skyblue;
+                margin-bottom: 8px;
+                height: 100px;
+        }
+
+        .con2{
+            margin-top: 40px;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .con2 .item{
+            height: 170px;
+            background-color: steelblue;
+            width: calc(50% - 3px);
+            margin-bottom: 6px;
+        }
+
+        @media all and (min-width:1200px){
+
+            header{
+                height: 100px;
+            }
+
+            .hWrap{
+                height: 100%;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                /* 
+                1. 부모가 height값을 가지고 있을 경우
+                %로 height를 줘도 됩니다  
+                2. 부모가 height값을 가지고 있지 않더라도
+                    해당요소가 position:absolute상태면
+                    %가 작동합니다. 
+                */
+            }
+
+            h1{
+                text-align: center;
+                font-size: 38px;
+                padding-top: 15px;
+            }
+
+            .gnb{
+                display: flex;
+                justify-content: center;
+                margin-top: 5px;
+            }
+            .gnb li{
+                margin-left: 20px;
+                margin-right:20px;
+                font-size: 18px;
+            }
+
+            .banner{
+                height: 420px;
+            }
+
+            .con1{
+                padding: 0;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 40px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .con1 .item{
+                width: 230px;
+                height: 230px;
+                border-radius: 0;
+            }
+
+            .con2{
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .con2 .item{
+                width: calc(25% - 6px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hWrap">
+            <h1>Logo</h1>
+            <ul class="gnb">
+                <li>list1</li>
+                <li>list2</li>
+                <li>list3</li>
+                <li>list4</li>
+                <li>list5</li>
+            </ul><!--gnb-->
+        </div><!--hWrap-->
+    </header>
+
+    <div class="banner"></div>
+
+    <div class="con1">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div><!--con1-->
+
+    <div class="con2">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    
+</body>
+</html>

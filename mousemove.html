@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        section{
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://hips.hearstapps.com/hmg-prod/images/beach-quotes-1559667853.jpg);
+            background-position:center;
+            background-size: cover;
+        }
+
+        .round{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -150px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="round"></div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+
+//.click(function(e){})
+//이벤트가 일어나고 있는 도중에 직접 개입해서 간섭할 수 있는
+//매개변수
+        $('section').mousemove(function(e){
+
+            let x = e.pageX; //마우스의 x좌표값
+            let y = e.pageY; //마우스의 y좌표값 
+
+            console.log(x,y);
+
+        /*
+         .round에게 position:absolute만 줘 두고
+         $('.round').css({
+            'left' : x,
+            'top' : y
+         })
+         이렇게만 쓰면 마우스 뒤를 쫓아다니는 것을 만들
+         수 있다!!! 
+        
+        */
+
+            $('.round').css({
+               'transform' :`translate(${x/20}px,${y/16}px)`
+            });
+/*
+ `` 백틱 backtick
+ ES6문법 중 하나로, 문자열을 쓸 때 일반 따옴표가 아닌
+ ``백틱으로 문자열을 쓰면 문자열을 쓰는 도중에
+ ${} 를 사용해서 자바스크립트 표현식을 넣을 수 있다
+
+ `transform`:`translate(${x/40}px,${y/26}px)`;
+ 백틱없이 쓸 경우
+ 'transform' : 'translate('+x/40+'px,'+y/26+'px)'
+
+*/
+        
+
+        });
+
+    </script>
+</body>
+</html>

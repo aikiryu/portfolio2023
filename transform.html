@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        .con{
+            display: flex;
+            justify-content: center;
+        }
+
+        .con div{
+            width: 200px;
+            height: 200px;
+            border: 5px solid #000;
+            font-size: 80px;
+            text-align: center;
+            line-height: 200px;
+            margin-left: 20px;
+            margin-right: 20px;
+            transition: all 1.5s;
+        }
+
+    /* 
+    transform 속성은 모양을 변경시키는 속성! 
+    transform의 특징!!!!
+    변화가 일어나던지 말던지 주변의 것들은 신경쓰지 않는다
+    즉 다시말해서,
+    요소의 너비, 높이등 형태가 변하는 것 처럼 보이지만
+    그냥 눈에 보이는 모양만 변경될뿐
+    실질적인 수치나 공간값이 변하는 것은 아니다 
+    
+    */
+        .item1:hover{
+            transform: rotate(180deg);
+            /* 
+            rotate() 단위는 deg, degree의 줄임말
+            (각)도를 나타냄 
+            각각 rotate() / ratateX() / rotateY() 가
+            있으며, X와 Y의 경우 입체적으로 회전된다 
+            */
+        }
+
+        .item2:hover{
+            width: 400px;
+            height: 400px;
+        }
+
+        .item3:hover{
+            transform: scale(2);
+            /* scale() 사이즈 조절
+            배수로 적용되는데, 2를 쓸 경우 2배,
+            0.8을 쓸 경우 기존사이즈의 80% 되는 크기로
+            적용된다.
+            가로나 세로 한쪽 방향만 스케일 조정을 하고 싶을땐
+            scaleX() / scaleY() 됩니다
+            */
+        }
+
+        .item4:hover{
+            transform: skew(45deg);
+        }
+
+        .item5:hover{
+            transform: skewY(45deg);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="con">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+    </div><!--con-->
+
+
+
+
+
+</body>
+</html>
